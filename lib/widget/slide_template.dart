@@ -9,15 +9,26 @@ class SlideTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Padding(
-        padding: const EdgeInsets.all(32.0),
+        padding: EdgeInsets.all(MediaQuery.sizeOf(context).height / 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: Theme.of(context).textTheme.headlineLarge),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: MediaQuery.sizeOf(context).height / 18,
+                fontWeight: FontWeight.w900,
+                color: Colors.white54,
+              ),
+            ),
             const SizedBox(height: 20),
-            Expanded(child: body),
+            Expanded(
+                child: Padding(
+              padding: EdgeInsets.all(MediaQuery.sizeOf(context).height / 30),
+              child: body,
+            )),
           ],
         ),
       ),
